@@ -15,6 +15,7 @@ Optional:
 
 ### Tools:
 - Visual Studio Code
+- Thonny IDE
 
 ### Technologies
 - Python
