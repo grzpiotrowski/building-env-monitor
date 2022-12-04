@@ -1,7 +1,7 @@
-# Building Environment Monitoring System
+# Building Environmental Monitoring System
 #### Student Name: Grzegorz Piotrowski   Student ID: 20099926
 
-Environment monitoring system for a building, focusing on temperature and humidity measured in different rooms.
+Environmental monitoring system for a building, focusing on temperature and humidity measured in different rooms.
 Data to be accessed by a web server though a MQTT broker, where it is visualised for the user on charts and a 3D model (using threejs) or a plan view of the building.
 User can set a target temperature and potentially receive a Slack notification when it is reached for each room.
 Using Raspberry Pi 4B as the main device and two Raspberry Pi Picos with Bluetooth modules and DHT11 sensors to collect data
