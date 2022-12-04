@@ -1,6 +1,6 @@
 # Temperature and Humidity Unit
 ## Assembly
-![Pico Temperature and Humidity Unit](/images/pico-temp-humidity-unit.jpg)
+![Pico Temperature and Humidity Unit](/docs/images/pico-temp-humidity-unit.jpg)
 
 ### Components:
     * Raspberry Pi Pico

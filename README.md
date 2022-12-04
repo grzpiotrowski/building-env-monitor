@@ -34,3 +34,5 @@ https://docs.python.org/3/library/socket.html
 * How to Manage Bluetooth Devices on Linux Using bluetoothctl \
 https://www.makeuseof.com/manage-bluetooth-linux-with-bluetoothctl/
 
+* PyBluez BluetoothSocket \
+https://pybluez.readthedocs.io/en/latest/api/bluetooth_socket.html
