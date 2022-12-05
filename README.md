@@ -13,6 +13,12 @@
 * Fritzing - for designing circuits \
 https://fritzing.org/
 
+* How to Safely Store API keys in Python \
+https://python.plainenglish.io/how-to-safely-store-your-api-keys-in-python-1dc5aadf93f9
+
+* Paho Python - MQTT Client Library Encyclopedia \
+https://www.hivemq.com/blog/mqtt-client-library-paho-python/
+
 ## Raspberry Pi Pico
 * Getting started with Raspberry Pi Pico \
 https://projects.raspberrypi.org/en/projects/getting-started-with-the-pico/0

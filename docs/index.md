@@ -17,11 +17,14 @@ TBD...
 
 # Raspberry Pi
 
+
 ## Dependencies
+```bat
 sudo apt-get install bluetooth
 sudo apt-get install libbluetooth-dev
 pip install PyBluez
-
+pip install paho-mqtt
+```
 
 ## Pairing with HC05 Bluetooth module
 Run bluetoothctl:
