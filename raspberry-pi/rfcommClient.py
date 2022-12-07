@@ -4,6 +4,7 @@
 import bluetooth
 from time import sleep
 
+
 def receiveMessage(clientSocket, endCharacter):
     """Receives data stream from the socket and merges data into a message
     based on the endCharacter"""
@@ -16,16 +17,31 @@ def receiveMessage(clientSocket, endCharacter):
     return data
 
 
-bluetoothDeviceAddress = '98:D3:71:F6:5F:5D' #The MAC address from the HC–05 sensor
-port = 1
-clientSocket = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
-clientSocket.connect((bluetoothDeviceAddress, port))
+def createSocket(bluetoothDeviceAddress, port):
+    clientSocket = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
+    clientSocket.connect((bluetoothDeviceAddress, port))
+    return clientSocket
 
-while True:
-    try:
-        data = receiveMessage(clientSocket, '}').decode('utf-8')
-        print(data)
-    except KeyboardInterrupt:
-        break
 
-clientSocket.close()
+def closeSocket(clientSocket):
+    closeSocket.close()
+
+
+def getData(clientSocket, endCharacter):
+    data = receiveMessage(clientSocket, '}').decode('utf-8')
+    print(data)
+    return data
+
+
+if __name__ == "__main__":
+    bluetoothMAC = '98:D3:71:F6:5F:5D' # MAC address of the HC–05 transceiver
+    port = 1
+    clientSocket = createSocket(bluetoothMAC, port)
+
+    while True:
+        try:
+            getData(clientSocket, '}')
+        except KeyboardInterrupt:
+            break
+
+    clientSocket.close()
