@@ -9,3 +9,4 @@ class APIkeys:
     mqttBrokerPort: int = int(os.getenv('mqttBrokerPort'))
     mqttUser: str = os.getenv('mqttUser')
     mqttPassword: str = os.getenv('mqttPassword')
+    mqttClientId: str = os.getenv('mqttClientId')

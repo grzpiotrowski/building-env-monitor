@@ -15,7 +15,7 @@ def on_publish(client, obj, mid):
 
 
 def createMqttClient():
-    mqttc = mqtt.Client()
+    mqttc = mqtt.Client(APIkeys.mqttClientId)
     # Assign event callbacks
     mqttc.on_connect = on_connect
     mqttc.on_publish = on_publish
@@ -24,11 +24,12 @@ def createMqttClient():
     mqttBrokerPort = APIkeys.mqttBrokerPort
     print(mqttBrokerURL)
 
-    # enable TLS for secure connection
-    mqttc.tls_set(tls_version=mqtt.ssl.PROTOCOL_TLS)
+    if APIkeys.mqttUser:
+        # enable TLS for secure connection
+        mqttc.tls_set(tls_version=mqtt.ssl.PROTOCOL_TLS)
+        # set username and password
+        mqttc.username_pw_set(APIkeys.mqttUser, APIkeys.mqttPassword)
 
-    # set username and password
-    mqttc.username_pw_set(APIkeys.mqttUser, APIkeys.mqttPassword)
     # connect to MQTT Cloud on specified port
     mqttc.connect(mqttBrokerURL, mqttBrokerPort)
     mqttc.loop_start()
