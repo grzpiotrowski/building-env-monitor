@@ -36,9 +36,9 @@ def createMqttClient():
     return mqttc
 
 
-def publishMqtt(topic, payload):
+def publishMqtt(mqttClient, topic, payload):
     print("Publishing: " + str(payload))
-    response = mqttc.publish(topic, payload)
+    response = mqttClient.publish(topic, payload)
     print(response)
 
 
@@ -49,5 +49,5 @@ if __name__ == "__main__":
     while True:
         temp=round(random.uniform(15, 21), 1)
         temp_json=json.dumps({'temperature':temp, 'timestamp':time.time()})
-        publishMqtt('temperature', temp_json)
+        publishMqtt(mqttc, 'temperature', temp_json)
         time.sleep(5)
