@@ -5,6 +5,10 @@ This is the Raspberry Pi Pico and Raspberry Pi 4B part of the Building Environme
 Link to the repo with the Web App part of this project: \
 https://github.com/grzpiotrowski/building-env-webapp
 
+## Documentation
+
+[building-env-monitor docs](/docs/index.md)
+
 ## System architecture
 ![BEMS System architecture](/images/IoT_BEMS_ProjectGraphic_v1.png)
 

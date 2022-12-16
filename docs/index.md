@@ -71,7 +71,7 @@ First of all we need to create a bucket to store our time series data. Navigate 
 
 ![Create a bucket](/docs/images/influxdb-create-bucket.jpg)
 
-Enter a name for the bucket, in this case we have chosen **apartment-env-data**. Optinally set a retention period for the data stored in the bucket. For example, specify to delete the data older than 7 days. Click **Create** to finish.
+Enter a name for the bucket, in this case we have chosen **apartment-env-data**. Optionally set a retention period for the data stored in the bucket. For example, specify to delete the data older than 7 days. Click **Create** to finish.
 
 ![Create a bucket](/docs/images/influxdb-create-bucket-dialog.jpg)
 
@@ -90,7 +90,7 @@ Time to set the **Broker Details**. Set the **Subscription Name** to any of your
 
 Copy the Hostname and Port of your MQTT Broker into the fields. If it is a public broker, leave the **Enable SSL** off.
 
-In this project, HiveMQ cloud cluster is used which allows secure connections only. In such case, **Enable SSL** must be toggled on as the connection is authenticated using username and password credentials.
+In this project, we are using HiveMQ cloud cluster, which allows secure connections only. In such case, **Enable SSL** must be toggled on as the connection is authenticated using username and password credentials.
 
 Set the **Security Details** to **Basic** and enter your HiveMQ Broker access credentials.
 
@@ -110,9 +110,9 @@ Set the **JSON Path to Timestamp** to *$.timestamp* as it is in the MQTT message
 
 ![Create a bucket](/docs/images/influxdb-create-mqtt-dataformat.jpg)
 
-**Measurement** in InfluxDB describes the data stored in the associated fields. This can be set from a field in JSON, if our message would contain the *type* field for example to describe the data measured or it can be set explicitly in InfluxDb. In this project, the JSON data does not have such field and we will name the incoming data as *environment*.
+**Measurement** in InfluxDB describes the data stored in the associated fields. This can be set from a field in JSON, if our message would contain a *type* field for example to describe the data measured, or it can be set explicitly in InfluxDb. In this project, the JSON data does not have such a field and we will name the incoming data as *environment*.
 
-In the next section we will specify **Tags** and **Fields**. Tags and Fields in InfluxDb are both key-value pairs that record metadata - data names, and data values. The difference is that Tags optional and are indexed which makes the queries on data quicker.
+In the next section we will specify **Tags** and **Fields**. Tags and Fields in InfluxDb are key-value pairs that record metadata (data names) and data values. The difference is that Tags are optional and are indexed, which makes the queries on data quicker.
 
 We will set a **Tag** to be the *deviceId* coming from the JSON content at *\$.deviceId* and set its type to *String*.
 
