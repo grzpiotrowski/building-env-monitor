@@ -2,6 +2,7 @@ import mqttClient
 import rfcommClient
 import time
 import json
+import senseHatEnvData
 
 
 if __name__ == "__main__":
@@ -48,7 +49,8 @@ if __name__ == "__main__":
                             # on the serial connection and there is more than one JSON in the sensorData
                             # TO BE FIXED.
                             continue
-                            
+            sensorData = senseHatEnvData.getEnvironmentalData()
+            mqttClient.publishMqtt(mqttc, topicName, json.dumps(sensorData))
             time.sleep(5)
         except KeyboardInterrupt:
             break

@@ -5,7 +5,7 @@ In this variant the power comes through a Micro-USB cable. Bluetooth module is p
 ![Pico Temperature and Humidity Unit](/docs/images/pico-temp-humidity-unit.jpg)
 
 ### Battery powered variant
-In this variant the power comes from two AA batteries. All components operate on 3.3V. This might decrease Bluetooth module range.
+In this variant the power comes from two AA batteries. All components operate on 3.3V. This might decrease the Bluetooth module's range.
 ![Pico Temperature and Humidity Unit - Battery Powered](/docs/images/pico-temp-humidity-unit-bettery-powered.jpg)
 
 ### Components:
@@ -41,6 +41,7 @@ sudo apt-get install bluetooth
 sudo apt-get install libbluetooth-dev
 pip install PyBluez
 pip install paho-mqtt
+pip install gpiozero
 ```
 
 ## Pairing with HC05 Bluetooth module

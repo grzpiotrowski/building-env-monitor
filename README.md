@@ -1,9 +1,11 @@
 # building-env-monitor
 
 This is the Raspberry Pi Pico and Raspberry Pi 4B part of the Building Environmental Monitoring System IoT project. \
+The project has been scoped out in the [proposal document](\proposal.md). \
 \
 Link to the repo with the Web App part of this project: \
 https://github.com/grzpiotrowski/building-env-webapp
+
 
 ## Documentation
 
@@ -50,6 +52,10 @@ https://www.makeuseof.com/manage-bluetooth-linux-with-bluetoothctl/
 
 * PyBluez BluetoothSocket \
 https://pybluez.readthedocs.io/en/latest/api/bluetooth_socket.html
+
+### SenseHat
+* SenseHat temperature correction \
+https://github.com/initialstate/wunderground-sensehat/wiki/Part-3.-Sense-HAT-Temperature-Correction
 
 
 # Known errors
