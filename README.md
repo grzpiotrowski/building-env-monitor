@@ -17,7 +17,11 @@ https://github.com/grzpiotrowski/building-env-webapp
 
 ## Hardware
 ### RPi Pico: Temperature and Humidity Unit
-![Pico Temperature and Humidity Unit](/images/circuits/pico-temp-humidity-unit_bb.png)
+![Pico Temperature and Humidity Unit](/docs/images/pico-temp-humidity-unit.jpg)
+
+Here are some photos of built prototypes:
+![Pico Temperature and Humidity Unit Photo](/docs/images/temp-humidity-unit-photo.jpg)
+![Pico Temperature and Humidity Unit Battery Powered Photo](/docs/images/temp-humidity-unit-battery-powered-photo.jpg)
 
 # Resources
 * Fritzing - for designing circuits \
