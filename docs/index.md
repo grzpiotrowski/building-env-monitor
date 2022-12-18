@@ -1,6 +1,12 @@
 # Temperature and Humidity Unit
 ## Assembly
+### Default variant
+In this variant the power comes through a Micro-USB cable. Bluetooth module is powered at 5V while the DTH sensor at 3.3V.
 ![Pico Temperature and Humidity Unit](/docs/images/pico-temp-humidity-unit.jpg)
+
+### Battery powered variant
+In this variant the power comes from two AA batteries. All components operate on 3.3V. This might decrease Bluetooth module range.
+![Pico Temperature and Humidity Unit - Battery Powered](/docs/images/pico-temp-humidity-unit-bettery-powered.jpg)
 
 ### Components:
     * Raspberry Pi Pico
