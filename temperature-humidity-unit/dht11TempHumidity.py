@@ -1,7 +1,7 @@
 import dht
 from machine import Pin, UART
 from time import sleep
-
+import ujson
 
 # device id
 deviceId = "pico01"
@@ -26,17 +26,19 @@ dhtSensor = dht.DHT11(Pin(22))
 LED.value(1)
 sleep(5) # Sleep to let DHT11 initialise after powering up
 
-i = 0
 while True:
     try:
         dhtSensor.measure()
         temperature = dhtSensor.temperature()
         humidity = dhtSensor.humidity()
-        i += 1
-        sensorMessage = '{ deviceid: "%s", temp: %.0f, humidity: %.0f }' % (
-            deviceId, temperature, humidity)
-        #print(sensorMessage)
-        uart.write(sensorMessage)
+        sensorData = {
+            "deviceId": deviceId,
+            "temperature": temperature,
+            "humidity": humidity
+        }
+        jsonData = ujson.dumps(sensorData)
+        #print(jsonData)
+        uart.write(jsonData)
         LED.value(1)
         sleep(ledBlinkTime)
         LED.value(0)

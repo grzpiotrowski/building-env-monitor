@@ -49,6 +49,9 @@ bluetoothctl scan on
 Note the MAC address of the Bluetooth module and pair and connect devices:
 ```bat
 bluetoothctl pair MAC_ADDRESS
+```
+bluetoothctl will promp for the PIN code. By default it is 1234.
+```bat
 bluetoothctl connect MAC_ADDRESS
 ```
 Paired Bluetooth devices can be check with:

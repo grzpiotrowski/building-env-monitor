@@ -50,3 +50,7 @@ https://www.makeuseof.com/manage-bluetooth-linux-with-bluetoothctl/
 
 * PyBluez BluetoothSocket \
 https://pybluez.readthedocs.io/en/latest/api/bluetooth_socket.html
+
+
+# Known errors
+In [/raspberrypi/main.py](/raspberrypi/main.py): Error after one of the devices times out and the data builds up on the serial connection and there is more than one JSON in the sensorData.

@@ -10,17 +10,28 @@ def receiveMessage(clientSocket, endCharacter):
     based on the endCharacter"""
     data = b''
     while True:
-        data += clientSocket.recv(1024)
-        #sleep(0.5) # Use sleep to wait for more packets
-        if data.decode('utf-8').endswith(endCharacter):
-            break
+        try:
+            data += clientSocket.recv(1024)
+            #sleep(0.5) # Use sleep to wait for more packets
+            if data.decode('utf-8').endswith(endCharacter):
+                break
+        except bluetooth.btcommon.BluetoothError:
+            print("Connection timed out.")
+            return False
+
     return data
 
 
 def createSocket(bluetoothDeviceAddress, port):
-    clientSocket = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
-    clientSocket.connect((bluetoothDeviceAddress, port))
-    return clientSocket
+    """Creates a rfcomm client. Returns False if the device is not responding.
+    """
+    try:
+        clientSocket = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
+        clientSocket.connect((bluetoothDeviceAddress, port))
+        return clientSocket
+    except bluetooth.btcommon.BluetoothError as bluetoothError:
+        print(bluetoothError.args)
+        return False
 
 
 def closeSocket(clientSocket):
@@ -28,8 +39,10 @@ def closeSocket(clientSocket):
 
 
 def getData(clientSocket, endCharacter):
-    data = receiveMessage(clientSocket, '}').decode('utf-8')
-    print(data)
+    data = receiveMessage(clientSocket, '}')
+    if data is not False:
+        data = data.decode('utf-8')
+    print("Received data: " + data)
     return data
 
 

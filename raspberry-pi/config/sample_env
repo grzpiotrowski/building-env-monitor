@@ -1,0 +1,4 @@
+mqttBrokerURL="xxxxx"
+mqttBrokerPort=1234
+mqttUser="user"
+mqttPassword="password"
