@@ -39,7 +39,8 @@ Optional:
 - LCD1602A display x1
 - Push button x3
 
-## Project Repository
+## Project Repositories
 https://github.com/grzpiotrowski/building-env-monitor
+https://github.com/grzpiotrowski/building-env-webapp
 
 

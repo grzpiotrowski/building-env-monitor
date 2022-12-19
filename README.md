@@ -1,7 +1,7 @@
 # building-env-monitor
 
 This is the Raspberry Pi Pico and Raspberry Pi 4B part of the Building Environmental Monitoring System IoT project. \
-The project has been scoped out in the [proposal document](\proposal.md). \
+The project has been scoped out in the [proposal document](/proposal.md). \
 \
 Link to the repo with the Web App part of this project: \
 https://github.com/grzpiotrowski/building-env-webapp
@@ -62,5 +62,5 @@ https://pybluez.readthedocs.io/en/latest/api/bluetooth_socket.html
 https://github.com/initialstate/wunderground-sensehat/wiki/Part-3.-Sense-HAT-Temperature-Correction
 
 
-# Known errors
+## Known errors
 In [/raspberrypi/main.py](/raspberrypi/main.py): Error after one of the devices times out and the data builds up on the serial connection and there is more than one JSON in the sensorData.
