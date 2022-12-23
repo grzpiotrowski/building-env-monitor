@@ -7,7 +7,7 @@ Link to the repo with the Web App part of this project: \
 https://github.com/grzpiotrowski/building-env-webapp
 
 ## Video presentation
-https://youtu.be/xUrZlsG5YCo
+https://youtu.be/r7cTduhuFsI
 
 ## Documentation
 
