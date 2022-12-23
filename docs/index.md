@@ -83,7 +83,7 @@ First of all we need to create a bucket to store our time series data. Navigate 
 
 Enter a name for the bucket, in this case we have chosen **apartment-env-data**. Optionally set a retention period for the data stored in the bucket. For example, specify to delete the data older than 7 days. Click **Create** to finish.
 
-![Create a bucket](/docs/images/influxdb-create-bucket-dialog.jpg)
+![Create a bucket dialog](/docs/images/influxdb-create-bucket-dialog.jpg)
 
 
 ## MQTT Subscribtion
@@ -94,7 +94,7 @@ InfluxDb allows to use its native MQTT connection to subscribe to a MQTT broker 
 
 To subscribe to the MQTT Broker of your choice.navigate to **Native Subscriptions** and click **Create Subscription**.
 
-![Create a bucket](/docs/images/influxdb-create-subscription.jpg)
+![Create subscription](/docs/images/influxdb-create-subscription.jpg)
 
 Time to set the **Broker Details**. Set the **Subscription Name** to any of your choice, *env-sensor* is used in this project.
 
@@ -104,13 +104,13 @@ In this project, we are using HiveMQ cloud cluster, which allows secure connecti
 
 Set the **Security Details** to **Basic** and enter your HiveMQ Broker access credentials.
 
-![Create a bucket](/docs/images/influxdb-create-mqtt-details.jpg)
+![MQTT Details](/docs/images/influxdb-create-mqtt-details.jpg)
 
 In the **Subscribe to topic** section, enter your MQTT topic name, to which the data is being published from a client deployed on Raspberry Pi. In this project it is *sensor-temp-humidity*.
 
 After that, select the storage bucket which we have created earlier - *apartment-env-data*.
 
-![Create a bucket](/docs/images/influxdb-create-mqtt-topic.jpg)
+![MQTT topic](/docs/images/influxdb-create-mqtt-topic.jpg)
 
 In the next section we are specifying the **Data format** incoming from the MQTT broker. In this case the data is sent as **JSON**.
 
@@ -118,7 +118,7 @@ InfluxDb can automatically set a **Timestamp** to incoming data, but since our M
 
 Set the **JSON Path to Timestamp** to *$.timestamp* as it is in the MQTT message payload and **Timestamp precision** to *seconds*.
 
-![Create a bucket](/docs/images/influxdb-create-mqtt-dataformat.jpg)
+![MQTT Data format](/docs/images/influxdb-create-mqtt-dataformat.jpg)
 
 **Measurement** in InfluxDB describes the data stored in the associated fields. This can be set from a field in JSON, if our message would contain a *type* field for example to describe the data measured, or it can be set explicitly in InfluxDb. In this project, the JSON data does not have such a field and we will name the incoming data as *environment*.
 
@@ -128,13 +128,13 @@ We will set a **Tag** to be the *deviceId* coming from the JSON content at *\$.d
 
 After that we add two **Fields**. The first one being the *temperature* with the JSON path set to *\$.temperature* and the second field named *humidity* with the path *\$.humidity*. Both these fields are set as *Float* data type.
 
-![Create a bucket](/docs/images/influxdb-create-mqtt-fields-tags.jpg)
+![MQTT Fields and tags](/docs/images/influxdb-create-mqtt-fields-tags.jpg)
 
 With these details specified, we can now **Save subscription** to create a connection to the MQTT Broker.
 
 After that, you should see the *env-sensor* subscription in the **Native Subscriptions** section with the status *RUNNING*.
 
-![Create a bucket](/docs/images/influxdb-create-mqtt-created.jpg)
+![MQTT connection created](/docs/images/influxdb-create-mqtt-created.jpg)
 
 From the side menu, navigate to **Data Explorer**. In this section we can create a simple query to the database and plot the data on a simple graph.
 
@@ -142,5 +142,5 @@ From the side menu, navigate to **Data Explorer**. In this section we can create
 
 You should now see the data incoming from the Raspberry Pi, through the MQTT Broker and into the InfluxDb real time database.
 
-![Create a bucket](/docs/images/influxdb-data-explorer.jpg)
+![Data explorer](/docs/images/influxdb-data-explorer.jpg)
 

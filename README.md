@@ -12,7 +12,7 @@ https://github.com/grzpiotrowski/building-env-webapp
 [building-env-monitor docs](/docs/index.md)
 
 ## System architecture
-![BEMS System architecture](/images/IoT_BEMS_ProjectGraphic_v1.png)
+![BEMS System architecture](/docs/images/IoT_BEMS_ProjectGraphic_v2.jpg)
 
 
 ## Hardware

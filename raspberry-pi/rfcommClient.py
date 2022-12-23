@@ -42,7 +42,7 @@ def getData(clientSocket, endCharacter):
     data = receiveMessage(clientSocket, '}')
     if data is not False:
         data = data.decode('utf-8')
-    print("Received data: " + data)
+    print("Received data: " + str(data))
     return data
 
 
